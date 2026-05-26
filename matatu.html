@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College News - Matatu Strike Kenya</title>
+
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#333;
+    }
+
+    /* HEADER */
+    header{
+      background:#002147;
+      color:white;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo-section{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo-section img{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+    }
+
+    .logo-section h1{
+      font-size:28px;
+    }
+
+    /* NAVIGATION */
+    nav{
+      background:#004080;
+      padding:15px;
+      text-align:center;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 20px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:yellow;
+    }
+
+    /* HERO SECTION */
+    .hero{
+      height:400px;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop')
+      center/cover no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero h2{
+      font-size:48px;
+      max-width:800px;
+      text-shadow:2px 2px 8px black;
+    }
+
+    /* SLIDESHOW */
+    .slideshow-container{
+      max-width:900px;
+      position:relative;
+      margin:50px auto;
+      overflow:hidden;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      background:white;
+    }
+
+    .slide{
+      display:none;
+    }
+
+    .slide img{
+      width:100%;
+      height:500px;
+      object-fit:cover;
+    }
+
+    .caption{
+      padding:15px;
+      text-align:center;
+      background:#002147;
+      color:white;
+      font-size:18px;
+    }
+
+    /* CONTENT SECTION */
+    .content{
+      max-width:1000px;
+      margin:auto;
+      padding:20px;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#002147;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    .social-icons{
+      margin-top:10px;
+    }
+
+    .social-icons a{
+      color:white;
+      margin:0 10px;
+      font-size:24px;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      color:yellow;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .hero h2{
+        font-size:32px;
+      }
+
+      nav a{
+        display:block;
+        margin:10px 0;
+      }
+
+      .slide img{
+        height:300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-section">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="College Logo">
+      <h1>Kenya College of Technology</h1>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">News</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>
+      Kenya Faces Major Transport Disruptions Amid Ongoing Matatu Strike
+    </h2>
+  </section>
+
+  <!-- SLIDESHOW -->
+  <section class="slideshow-container">
+
+    <div class="slide fade">
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop" alt="Stranded commuters">
+      <div class="caption">Stranded commuters waiting for transport during the strike.</div>
+    </div>
+
+    <div class="slide fade">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Idle matatus">
+      <div class="caption">Idle matatus parked due to the nationwide strike.</div>
+    </div>
+
+    <div class="slide fade">
+      <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop" alt="Protest scene">
+      <div class="caption">Demonstrations and protests linked to transport issues.</div>
+    </div>
+
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content">
+    <h2>Latest Updates</h2>
+    <p>
+      The ongoing matatu strike in Kenya has caused significant transport
+      disruptions across major cities including Nairobi, Mombasa, and Kisumu.
+      Thousands of commuters have been stranded as operators protest against
+      new regulations and rising operational costs.
+    </p>
+
+    <p>
+      Students and workers are experiencing delays, while government officials
+      continue negotiations with transport associations in an effort to restore
+      normal operations.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kenya College of Technology. All Rights Reserved.</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT SLIDESHOW -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+
+</body>
+</html>
