@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matatu strike kenya</title>
+    <style>
+        .hero{
+      height:400px;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop')
+      center/cover no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+    </style>
+</head>
+<body bgcolor="skyblue">
+    <h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="college logo" height="50px" width="50px">
+        <b><i>NIBS COLLEGE</i></b>
+    </h1>
+    <nav>
+    <a href="#"><i>Home</i></a>
+    <a href="#"><i>News</i></a>
+    <a href="#"><i>Gallery</i></a>
+    <a href="#"><i>Contact</i></a>
+  </nav>
+  <section class="hero">
+    <h2>
+      Kenya Faces Major Transport Disruptions Amid Ongoing Matatu Strike
+    </h2>
+  </section>
+  <section class="slideshow-container">
+
+    <div class="slide fade">
+      <img src="c:\Users\STUDENT\Downloads\ian\image1.png" alt="Stranded commuters" height="500px" width="900px">
+      <div class="caption">Stranded commuters waiting for transport during the strike.</div>
+    </div>
+
+    <div class="slide fade">
+      <img src="c:\Users\STUDENT\Downloads\ian\download2.png" alt="Idle matatus"height="500px" width="900px" >
+      <div class="caption">Idle matatus parked due to the nationwide strike.</div>
+    </div>
+
+    <div class="slide fade">
+      <img src="c:\Users\STUDENT\Downloads\ian\image3.png" alt="Protest scene"height="500px" width="900px" >
+      <div class="caption">Demonstrations and protests linked to transport issues.</div>
+    </div>
+
+  </section>
+  <section class="content">
+    <h2>Latest Updates</h2>
+    <p>
+      The ongoing matatu strike in Kenya has caused significant transport
+      disruptions across major cities including Nairobi, Mombasa, and Kisumu.
+      Thousands of commuters have been stranded as operators protest against
+      new regulations and rising operational costs.
+    </p>
+
+    <p>
+      Students and workers are experiencing delays, while government officials
+      continue negotiations with transport associations in an effort to restore
+      normal operations.
+    </p>
+  </section>
+  <footer>
+    <p>&copy; 2026 Kenya College of Technology. All Rights Reserved.</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+
+
+
+    <style>
+    
+    </style>
+</body>
+</html>
