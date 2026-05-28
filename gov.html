@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Opportunities Page</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#333;
+        }
+
+        .container{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:15px;
+        }
+
+        .card h2{
+            font-size:22px;
+            margin-bottom:10px;
+            color:#222;
+        }
+
+        .deadline{
+            color:#d9534f;
+            font-weight:bold;
+            margin-bottom:10px;
+        }
+
+        .short-desc{
+            margin-bottom:15px;
+            color:#555;
+        }
+
+        .details{
+            display:none;
+            margin-top:10px;
+            color:#444;
+            line-height:1.5;
+        }
+
+        button{
+            margin-top:10px;
+            padding:10px 15px;
+            border:none;
+            background:#007bff;
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Youth Opportunities</h1>
+
+    <div class="container">
+
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="c:\Users\STUDENTS\OneDrive\IAN\images (1).jfif" alt="Government Youth Fund">
+
+            <div class="card-content">
+                <h2>Government Youth Fund</h2>
+
+                <p class="deadline">Deadline: 15 June 2026</p>
+
+                <p class="short-desc">
+                    Financial support for youth-owned startups and businesses.
+                </p>
+
+                <button class="toggle-btn">
+                    Show Details
+                </button>
+
+                <div class="details">
+                    <p>
+                        The Government Youth Fund provides affordable loans and
+                        mentorship opportunities to empower young entrepreneurs
+                        across Kenya.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="c:\Users\STUDENTS\OneDrive\IAN\images (2).jfif" alt="Ajira Digital Programme">
+
+            <div class="card-content">
+                <h2>Ajira Digital Programme</h2>
+
+                <p class="deadline">Deadline: 30 June 2026</p>
+
+                <p class="short-desc">
+                    Digital jobs training and online work opportunities for youth.
+                </p>
+
+                <button class="toggle-btn">
+                    Show Details
+                </button>
+
+                <div class="details">
+                    <p>
+                        Ajira Digital equips young people with digital skills,
+                        freelancing knowledge, and access to online job platforms
+                        for sustainable income generation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="c:\Users\STUDENTS\OneDrive\IAN\images.jfif" alt="Tony Elumelu Foundation Grant">
+
+            <div class="card-content">
+                <h2>Tony Elumelu Foundation Grant</h2>
+
+                <p class="deadline">Deadline: 10 July 2026</p>
+
+                <p class="short-desc">
+                    Entrepreneurship grant for African startups and innovators.
+                </p>
+
+                <button class="toggle-btn">
+                    Show Details
+                </button>
+
+                <div class="details">
+                    <p>
+                        The Tony Elumelu Foundation offers funding, mentorship,
+                        business training, and networking opportunities to young
+                        African entrepreneurs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="c:\Users\STUDENTS\OneDrive\IAN\images (3).jfif" alt="KEPSA Youth Enterprise">
+
+            <div class="card-content">
+                <h2>KEPSA Youth Enterprise</h2>
+
+                <p class="deadline">Deadline: 25 July 2026</p>
+
+                <p class="short-desc">
+                    Business development support for youth enterprises in Kenya.
+                </p>
+
+                <button class="toggle-btn">
+                    Show Details
+                </button>
+
+                <div class="details">
+                    <p>
+                        KEPSA Youth Enterprise connects youth-led businesses with
+                        training, mentorship, partnerships, and market access
+                        opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $(".toggle-btn").click(function(){
+
+                $(this).next(".details").slideToggle();
+
+                // Change button text
+                if($(this).text() === "Show Details"){
+                    $(this).text("Hide Details");
+                } else {
+                    $(this).text("Show Details");
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
