@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matatu Strike News Portal</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           GENERAL STYLING
+        ========================= */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Roboto', sans-serif;
+            background:#f4f4f4;
+            color:#222;
+        }
+
+        h1,h2,h3{
+            font-family:'Merriweather', serif;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+        header{
+            background:#0b1f3a;
+            color:white;
+            padding:15px 30px;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .college-brand{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .college-brand img{
+            width:70px;
+            height:70px;
+            border-radius:50%;
+        }
+
+        .college-name{
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+        nav{
+            background:#122b4d;
+        }
+
+        .nav-links{
+            display:flex;
+            justify-content:center;
+            list-style:none;
+            flex-wrap:wrap;
+        }
+
+        .nav-links li{
+            margin:10px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            padding:10px 18px;
+            border-radius:5px;
+            transition:0.3s ease;
+            font-weight:500;
+        }
+
+        .nav-links a:hover{
+            background:#1e88e5;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+        .hero{
+            height:400px;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+        .hero-content h1{
+            font-size:48px;
+            margin-bottom:15px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+        }
+
+        /* =========================
+           SLIDESHOW
+        ========================= */
+        .slideshow-section{
+            padding:40px 20px;
+            text-align:center;
+        }
+
+        .slideshow-container{
+            max-width:900px;
+            margin:auto;
+            position:relative;
+        }
+
+        .slide{
+            display:none;
+        }
+
+        .slide img{
+            width:100%;
+            height:450px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        footer{
+            background:#0b1f3a;
+            color:white;
+            text-align:center;
+            padding:25px 20px;
+            margin-top:40px;
+        }
+
+        .social-icons{
+            margin-top:10px;
+        }
+
+        .social-icons a{
+            color:white;
+            margin:0 10px;
+            font-size:22px;
+            transition:0.3s ease;
+        }
+
+        .social-icons a:hover{
+            color:#1e88e5;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media(max-width:768px){
+
+            header{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .hero-content h1{
+                font-size:34px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+
+            .slide img{
+                height:300px;
+            }
+        }
+
+        @media(max-width:480px){
+
+            .hero{
+                height:300px;
+            }
+
+            .hero-content h1{
+                font-size:26px;
+            }
+
+            .hero-content p{
+                font-size:16px;
+            }
+
+            .slide img{
+                height:220px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
+
+        <div class="college-brand">
+
+            <!-- College Logo -->
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="College Logo">
+
+            <div class="college-name">
+                Nairobi Technical College
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+    <nav>
+
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Kenya Matatu Strike Causes Major Transport Disruptions</h1>
+
+            <p>
+                Thousands of Nairobi commuters stranded as transport operators protest new regulations.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         SLIDESHOW SECTION
+    ========================== -->
+    <section class="slideshow-section">
+
+        <h2>Strike Photo Highlights</h2>
+
+        <br>
+
+        <div class="slideshow-container">
+
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da"
+                alt="Stranded commuters">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1509749837427-ac94a2553d0e"
+                alt="Idle matatus">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3"
+                alt="Transport protest">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <p>
+            &copy; 2026 Nairobi Technical College. All Rights Reserved.
+        </p>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+
+            <a href="#"><i class="fab fa-twitter"></i></a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <a href="#"><i class="fab fa-youtube"></i></a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT SLIDESHOW
+    ========================== -->
+    <script>
+
+        let slideIndex = 0;
+
+        showSlides();
+
+        function showSlides(){
+
+            let slides = document.getElementsByClassName("slide");
+
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if(slideIndex > slides.length){
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 3000);
+
+        }
+
+    </script>
+
+</body>
+</html>
