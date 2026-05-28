@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Application / Registration Form</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            padding:40px;
+        }
+
+        .form-container{
+            max-width:600px;
+            background:white;
+            margin:auto;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:25px;
+            color:#333;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+        }
+
+        input,
+        select{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        .buttons{
+            display:flex;
+            gap:10px;
+        }
+
+        button{
+            flex:1;
+            padding:12px;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        .submit-btn{
+            background:#007bff;
+            color:white;
+        }
+
+        .submit-btn:hover{
+            background:#0056b3;
+        }
+
+        .reset-btn{
+            background:#6c757d;
+            color:white;
+        }
+
+        .reset-btn:hover{
+            background:#545b62;
+        }
+
+        .error{
+            color:red;
+            font-size:14px;
+            margin-top:5px;
+        }
+
+        .success-message{
+            display:none;
+            margin-top:20px;
+            padding:15px;
+            background:#28a745;
+            color:white;
+            text-align:center;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+
+        <h2>Application / Registration Form</h2>
+
+        <form id="registrationForm">
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+
+                <input type="text" id="fullname" placeholder="Enter full name">
+
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <!-- National ID -->
+            <div class="form-group">
+                <label for="nationalid">National ID Number</label>
+
+                <input type="text" id="nationalid" placeholder="Enter 8-digit ID number">
+
+                <div class="error" id="idError"></div>
+            </div>
+
+            <!-- Opportunity Selection -->
+            <div class="form-group">
+                <label for="opportunity">Select Opportunity</label>
+
+                <select id="opportunity">
+                    <option value="">-- Select Opportunity --</option>
+                    <option>Government Youth Fund</option>
+                    <option>Ajira Digital Programme</option>
+                    <option>Tony Elumelu Foundation Grant</option>
+                    <option>KEPSA Youth Enterprise</option>
+                </select>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input type="text" id="email" placeholder="Enter email address">
+
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+
+                <input type="text" id="phone" placeholder="Enter phone number">
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button type="submit" class="submit-btn">
+                    Submit
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Reset
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            Form submitted successfully!
+        </div>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#registrationForm").submit(function(event){
+
+                event.preventDefault();
+
+                // Clear previous errors
+                $(".error").text("");
+
+                let fullName = $("#fullname").val().trim();
+                let nationalID = $("#nationalid").val().trim();
+                let email = $("#email").val().trim();
+
+                let isValid = true;
+
+                // Full Name Validation
+                if(fullName === ""){
+                    $("#nameError").text("Full Name is required.");
+                    isValid = false;
+                }
+
+                // National ID Validation
+                let idPattern = /^[0-9]{8}$/;
+
+                if(!idPattern.test(nationalID)){
+                    $("#idError").text("National ID must be numeric and exactly 8 digits.");
+                    isValid = false;
+                }
+
+                // Email Validation
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if(!emailPattern.test(email)){
+                    $("#emailError").text("Please enter a valid email address.");
+                    isValid = false;
+                }
+
+                // If form is valid
+                if(isValid){
+
+                    $("#successMessage")
+                        .hide()
+                        .fadeIn(1000);
+
+                    // Optional: reset form after submission
+                    $("#registrationForm")[0].reset();
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
