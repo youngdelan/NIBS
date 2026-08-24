@@ -1,0 +1,202 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM2W+xFuOTAV6uszpiT82CK",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/youngdelan/NIBS/blob/master/colabknn.pyb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "DatasetHWR_data=pd.read_excel(\"/content/DatasetHWR.xlsx\")\n",
+        "print(DatasetHWR_data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JdoMQpU9VFnN",
+        "outputId": "454a27f9-3814-4dd3-b8ba-a46728bd5b7b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   HEIGHT  WEIGHT REMARKS\n",
+            "0     170      65      no\n",
+            "1     185      85     yes\n",
+            "2     160      55      no\n",
+            "3     178      75     yes\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#selecting features and lables\n",
+        "x=DatasetHWR_data.iloc[:,:-1]\n",
+        "y=DatasetHWR_data.iloc[:,-1]\n",
+        "print(x)\n",
+        "print(y)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2pzKxGi0Vs6Z",
+        "outputId": "6fcfa258-1967-4d4a-dcc9-7ef7c6c40ef8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   HEIGHT  WEIGHT\n",
+            "0     170      65\n",
+            "1     185      85\n",
+            "2     160      55\n",
+            "3     178      75\n",
+            "0     no\n",
+            "1    yes\n",
+            "2     no\n",
+            "3    yes\n",
+            "Name: REMARKS, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#selecting features and lables\n",
+        "DatasetHWR_data\n",
+        "x=DatasetHWR_data[['HEIGHT','WEIGHT']]\n",
+        "y=DatasetHWR_data['REMARKS']\n",
+        "print(x)\n",
+        "print(y)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nT7Kz58DYY2K",
+        "outputId": "aaa515bc-5f1c-461f-da22-7d3d9f6de0bd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   HEIGHT  WEIGHT\n",
+            "0     170      65\n",
+            "1     185      85\n",
+            "2     160      55\n",
+            "3     178      75\n",
+            "0     no\n",
+            "1    yes\n",
+            "2     no\n",
+            "3    yes\n",
+            "Name: REMARKS, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "def get_distance_math(point1, point2):\n",
+        "    # Returns the Euclidean distance between two N-dimensional points\n",
+        "    return math.dist(point1, point2)\n"
+      ],
+      "metadata": {
+        "id": "CCcIastKiWkh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import collections\n",
+        "\n",
+        "#impementing knn predictor\n",
+        "def predict(new_HEIGHT, new_WEIGHT, k=3):\n",
+        " new_point=[new_HEIGHT, new_WEIGHT]\n",
+        " distances=[]\n",
+        " for i in range(len(x)):\n",
+        "    distance=get_distance_math(new_point, x.iloc[i])\n",
+        "    distances.append((distance,y[i]))\n",
+        " distances.sort()\n",
+        " K_nearest=distances[:k]\n",
+        " K_lables=[lable for(distance,lable) in K_nearest]\n",
+        " prediction=collections.Counter(K_lables).most_common(1)[0][0]\n",
+        " return prediction"
+      ],
+      "metadata": {
+        "id": "mtZX-mo_m8QN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#doing the actual prediction\n",
+        "\n",
+        "predict(170,72,3)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "jPRWPlzBfajI",
+        "outputId": "16f6fb11-4c73-4a3b-fb4d-b458c89014b1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'no'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 58
+        }
+      ]
+    }
+  ]
+}
